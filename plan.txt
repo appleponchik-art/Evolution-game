@@ -1,0 +1,39 @@
+evolution_game/
+│
+├── main.py                  # точка входу, ігровий цикл
+├── requirements.txt
+│
+├── config/
+│   └── settings.py          # константи: розмір вікна, FPS, кольори, шляхи
+│
+├── core/
+│   ├── game.py               # клас Game — керує станами, циклом update/render
+│   ├── state_manager.py      # перемикання станів (меню/гра/пауза/game over)
+│   └── camera.py             # якщо буде скролінг карти
+│
+├── entities/
+│   ├── entity.py              # базовий клас Entity (позиція, спрайт, hitbox)
+│   ├── player.py               # клас Player(Entity) — рух, XP, еволюція
+│   ├── food.py                 # клас Food(Entity)
+│   └── enemy.py                 # (пізніше) інші істоти/загрози
+│
+├── evolution/
+│   ├── evolution_stages.py     # дані про стадії (список/дікт конфігів)
+│   └── evolution_system.py     # логіка перевірки XP і переходу на нову стадію
+│
+├── world/
+│   ├── spawner.py               # генерація їжі/ворогів на карті
+│   └── map.py                    # межі світу, фон
+│
+├── ui/
+│   ├── hud.py                    # шкала прогресу, XP, поточна стадія
+│   └── menu.py                   # головне меню, game over екран
+│
+├── assets/
+│   ├── images/
+│   ├── sounds/
+│   └── fonts/
+│
+└── utils/
+    ├── helpers.py                # допоміжні функції (колізії, math)
+    └── asset_loader.py            # завантаження картинок/звуків з кешем
